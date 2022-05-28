@@ -9,35 +9,55 @@ namespace Dnd__Combat
 
             Console.WriteLine("Hello World!");
             Console.WriteLine("Welcome to DnD Combat!");
+            Console.WriteLine();
 
             Random rnd = new Random();
-            
 
-            int DiceRoll(int min, int max)
-            {
-                return rnd.Next(min, max + 1);                
-            }
-            
-            
+            //need to instantiate instance of dice class
+
+
+
+            //Weapons
             Weapon shortSword = new Weapon();
             shortSword.Name = "sword";
-            shortSword.DamageMin = 1;
             shortSword.DamageMax = 6;
 
+            Weapon handAxe = new Weapon();
+            handAxe.Name = "handaxe";
+            handAxe.DamageMax = 6;
+
+            Weapon greatClub = new Weapon();
+            greatClub.Name = "greatclub";
+            greatClub.DamageMax = 8;
+
+            //Characters
             Character bob = new Character();
             bob.Name = "Bob";
             bob.Weapon = shortSword;
             bob.HealthPoints = 50;
+            bob.DexBonus = 2;
             
 
-            
-            
-            while (bob.HealthPoints > 0)
-            {
-                bob.HealthPoints -= DiceRoll(shortSword.DamageMin, shortSword.DamageMax);
-                Console.WriteLine("Ouchie! " + bob.HealthPoints);
-            }
-            
+            Character joe = new Character();
+            joe.Name = "Joe";
+            joe.Weapon = handAxe;
+            joe.HealthPoints = 50;
+            joe.DexBonus = 3;
+           
+
+            Character sally = new Character();
+            sally.Name = "Sally";
+            sally.Weapon = greatClub;
+            sally.HealthPoints = 50;
+            sally.DexBonus = 1;
+           
+
+
+            // Combat
+            Combat combat = new Combat();
+
+            combat.TwoPersonMelee(joe, sally);
+
 
         }
     }
