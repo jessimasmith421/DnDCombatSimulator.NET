@@ -13,7 +13,7 @@ namespace Dnd__Combat
 
         //properties
         public string Name { get; set; }
-        public int DamageMin { get; set; } = 1;
+        public int DamageMin { get; set; } =1;
         public int DamageMax { get; set; }
 
         //methods

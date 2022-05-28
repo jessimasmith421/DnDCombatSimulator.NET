@@ -35,17 +35,20 @@ namespace Dnd__Combat
 
         public void AttackRoll(Character beingAttacked)
         {
-            int rollToHit = dice.DiceRoll(1, 20);
-            Console.Write(Name + " rolled a " + rollToHit + " to hit! ");
-            if (rollToHit >= beingAttacked.ArmorClass && HealthPoints > 0)
+            if (HealthPoints > 0)
             {
-                int damage = Weapon.Damage();
-                beingAttacked.HealthPoints -= damage;
-                Console.WriteLine(Name + " hit " + beingAttacked.Name + " for " + damage + ". " + beingAttacked.Name + " has " + beingAttacked.HealthPoints + " hp left.");
-            }
-            else if (HealthPoints > 0)
-            {
-                Console.WriteLine(Name + " missed " + beingAttacked.Name + "!!!");
+                int rollToHit = dice.DiceRoll(1, 20);
+                Console.Write(Name + " rolled a " + rollToHit + " to hit! ");
+                if (rollToHit >= beingAttacked.ArmorClass && HealthPoints > 0)
+                {
+                    int damage = Weapon.Damage();
+                    beingAttacked.HealthPoints -= damage;
+                    Console.WriteLine(Name + " hit " + beingAttacked.Name + " for " + damage + ". " + beingAttacked.Name + " has " + beingAttacked.HealthPoints + " hp left.");
+                }
+                else
+                {
+                    Console.WriteLine(Name + " missed " + beingAttacked.Name + "!!!");
+                }
             }
             else
             {
