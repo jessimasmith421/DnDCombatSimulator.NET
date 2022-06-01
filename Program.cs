@@ -13,7 +13,7 @@ namespace Dnd__Combat
 
             Random rnd = new Random();
 
-            //need to instantiate instance of dice class
+            //need to instantiate instance of dice class here? Not at this time
 
 
 
@@ -29,6 +29,17 @@ namespace Dnd__Combat
             Weapon greatClub = new Weapon();
             greatClub.Name = "greatclub";
             greatClub.DamageMax = 8;
+
+            Weapon greatSword = new Weapon();
+            greatSword.Name = "greatsword";
+            greatSword.DamageMax = 6;
+            greatSword.NumberOfDice = 2;
+
+            // if I make the type of weapon a class, I can add  +1, +2 , etc. weapons and also have special magical weapons of a particular type
+            // can make an Attack interface if I want to add spells, needs an attack method and min and max damage and mayber # of dice?
+            
+            // if i can add # of dice, I can make it so that fireball does 6d6 damage or whatever and a greatsword can do 2d6
+                // Its not a huge difference, but there is a difference in probability for  2d6 vs like 1d12. Hence adding number of dice Property
 
             //Characters
             Character bob = new Character();

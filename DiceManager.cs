@@ -12,5 +12,18 @@ namespace Dnd__Combat
         {
             return rnd.Next(min, max + 1);
         }
+
+        public int MultipleDiceRoll(int minOnDie, int maxOnDie, int numberOfDice)
+        {
+            int totalRoll = 0;
+            for (int i = 1; i <= numberOfDice; i++)
+            {
+                int numOnDie = DiceRoll(minOnDie, maxOnDie);
+                totalRoll += numOnDie;
+
+                Console.WriteLine("Die #" + i + " is " + numOnDie);
+            }
+            return totalRoll;
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace Dnd__Combat
         public string Name { get; set; }
         public int DamageMin { get; set; } =1;
         public int DamageMax { get; set; }
+        public int NumberOfDice { get; set; } = 1;
 
         //methods
         public int Damage()
