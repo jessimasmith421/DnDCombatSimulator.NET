@@ -57,5 +57,34 @@ namespace Dnd__Combat
             Console.WriteLine();
         }
 
+
+        // CREATES A CHARACTER WITH RANDOM STATS!!!!
+        public void CreateCharacter()
+        {
+            // run dice.CharacterStats() 6 times to get strength, dex, int, wis, cha, and con
+            // maybe put it all in a dictionary? until we put it in a character
+
+            Dictionary<string, int> characterStats = new Dictionary<string, int>();
+
+            characterStats["Strength"] = dice.CharacterStats();
+            Console.WriteLine("Strength: " + characterStats["Strength"]);
+            
+            characterStats["Dexterity"] = dice.CharacterStats();
+            Console.WriteLine("Dexterity: " + characterStats["Dexterity"]);
+            
+            characterStats["Constitution"] = dice.CharacterStats();
+            Console.WriteLine("Constitution: " + characterStats["Constitution"]);
+            
+            characterStats["Intelligence"] = dice.CharacterStats();
+            Console.WriteLine("Intelligence: " + characterStats["Intelligence"]);
+            
+            characterStats["Wisdom"] = dice.CharacterStats();
+            Console.WriteLine("Wisdom " + characterStats["Wisdom"]);
+            
+            characterStats["Charisma"] = dice.CharacterStats();
+            Console.WriteLine("Charisma: " + characterStats["Charisma"]);
+
+        }
+
     }
 }

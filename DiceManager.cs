@@ -25,5 +25,26 @@ namespace Dnd__Combat
             }
             return totalRoll;
         }
+
+        public int CharacterStats()
+        {
+            List<int> statsRoll = new List<int>();
+
+            for(int i = 0; i <4; i++) // for loop to roll 4 dice
+            {
+                int roll = rnd.Next(1, 7); // range is 1-7 because .Next makes the max number exculsive (,6 instead of <=6)
+                statsRoll.Add(roll);
+            }
+            statsRoll.Sort();
+            statsRoll.RemoveAt(0);
+
+            int total = 0;
+
+            for(int i = 0; i < 3; i++)
+            {
+                total += statsRoll[i];
+            }
+            return total;
+        }
     }
 }
