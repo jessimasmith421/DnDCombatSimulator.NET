@@ -12,7 +12,7 @@ namespace Dnd__Combat
             menu.WelcomeMessage();
 
             menu.RandomCharacterMaker();
-            //menu.CharacterCombat();
+            menu.CharacterCombat();
 
 
             //maker.CharacterStats();
