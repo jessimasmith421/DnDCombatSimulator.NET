@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dnd__Combat.DAOs;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,13 @@ namespace Dnd__Combat
 {
     public class UserInterface
     {
+        private readonly DiceManager diceManager;
+        public UserInterface(DiceManager dm)
+        {
+            this.diceManager = dm;
+        }
+
+
         // methods
 
         public void WelcomeMessage()
@@ -14,19 +22,86 @@ namespace Dnd__Combat
             Console.WriteLine();
         }
 
-        //public Character CharacterPicker ()
-        public void RandomCharacterMaker()
+        public void MainMenu()
         {
-            Console.WriteLine("Would you like to make a new, randomized character?");
-            string answer = Console.ReadLine();
-
-            Character randomlyMade = new Character();
-
-            if (answer == "Y"|| answer == "y")
+            bool done = false;
+            while (!done)
             {
-                randomlyMade.CreateCharacter();
+
+                CharacterDAO characterDAO = new CharacterDAO("conn string here", diceManager); // connection string here when in database
+                Console.WriteLine("What would you like to do?");
+                Console.WriteLine();
+                Console.WriteLine("1) Create a new character");
+                Console.WriteLine("2) Battle 2 characters once");
+                Console.WriteLine("3) Battle 2 characters multiple times");
+                Console.WriteLine("4) Battle 2 characters for a certain amount of time");
+                Console.WriteLine("5) Allow the database to randomly generate fights for a certain amount of time");
+                Console.WriteLine("6) View stats of a certain character");
+                Console.WriteLine("0) Exit");
+
+                string input = Console.ReadLine();
+
+                switch (input)
+                {
+                    case "1":
+                        Console.WriteLine("Would you like to randomly generate a character? Y/N");
+                        string userInput = Console.ReadLine();
+                        if (userInput.ToLower() == "y")
+                        {
+
+                            Character character = characterDAO.CreateCharacterRandomly();
+                            Console.WriteLine("Here are your new character's stats!");
+                            Console.WriteLine("Strength: " + character.Strength);
+                            Console.WriteLine("Dexterity " + character.Dexterity);
+                            Console.WriteLine("Constitution: " + character.Constitution);
+                            Console.WriteLine("Intelligence: " + character.Intelligence);
+                            Console.WriteLine("Wisdom: " + character.Wisdom);
+                            Console.WriteLine("Charisma: " + character.Charisma);
+
+
+                        }
+                        break;
+
+                    case "2":
+
+                        break;
+
+                    case "3":
+
+                        break;
+
+                    case "4":
+
+                        break;
+
+                    case "5":
+
+                        break;
+
+                    case "6":
+
+                        break;
+
+                    case "0":
+                        Console.WriteLine("Goodbye!");
+                        done = true;
+                        break;
+                }
             }
         }
+        //public Character CharacterPicker ()
+        //public void RandomCharacterMaker()
+        //{
+        //    Console.WriteLine("Would you like to make a new, randomized character?");
+        //    string answer = Console.ReadLine();
+
+        //    Character randomlyMade = new Character();
+
+        //    if (answer == "Y"|| answer == "y")
+        //    {
+        //        randomlyMade.CreateCharacter();
+        //    }
+        //}
 
         public void CharacterCombat()
         {
@@ -131,7 +206,7 @@ namespace Dnd__Combat
             Console.WriteLine("Perfect! Let the fight begin!!!");
             Console.WriteLine();
 
-            combat.TwoPersonMelee(a, b);
+            //combat.TwoPersonMelee(a, b);
 
 
 

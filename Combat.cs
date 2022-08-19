@@ -20,58 +20,58 @@ namespace Dnd__Combat
                 Console.WriteLine();
             }
         }
-        public void TwoPersonMelee(Character a, Character b)
-        {
-            a.InitiativeRoll();
-            b.InitiativeRoll();
+        //public void TwoPersonMelee(Character a, Character b)
+        //{
+        //    a.InitiativeRoll();
+        //    b.InitiativeRoll();
 
-            if (a.Initiative > b.Initiative)
-            {
-                Console.WriteLine(a.Name + " rolled higher than " + b.Name + ", so " + a.Name + " goes first!");
-                Console.WriteLine();
-                while (a.HealthPoints > 0 && b.HealthPoints > 0)
-                {
-                    //a attacks first
+        //    if (a.Initiative > b.Initiative)
+        //    {
+        //        Console.WriteLine(a.Name + " rolled higher than " + b.Name + ", so " + a.Name + " goes first!");
+        //        Console.WriteLine();
+        //        while (a.HealthPoints > 0 && b.HealthPoints > 0)
+        //        {
+        //            //a attacks first
 
-                    a.AttackRoll(b);
-                    b.AttackRoll(a);
+        //            a.AttackRoll(b);
+        //            b.AttackRoll(a);
 
-                }
-                if (a.HealthPoints > 0)
-                {
-                    Console.WriteLine(a.Name + " wins!!!");
-                }
-                else
-                {
-                    Console.WriteLine(b.Name + " wins!!!");
-                }
-            }
-            else if (b.Initiative > a.Initiative)
-            {
-                Console.WriteLine(b.Name + " rolled higher than " + a.Name + ", so " + b.Name + " goes first!");
-                Console.WriteLine();
-                while (a.HealthPoints > 0 && b.HealthPoints > 0)
-                {
-                    //a attacks first
+        //        }
+        //        if (a.HealthPoints > 0)
+        //        {
+        //            Console.WriteLine(a.Name + " wins!!!");
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine(b.Name + " wins!!!");
+        //        }
+        //    }
+        //    else if (b.Initiative > a.Initiative)
+        //    {
+        //        Console.WriteLine(b.Name + " rolled higher than " + a.Name + ", so " + b.Name + " goes first!");
+        //        Console.WriteLine();
+        //        while (a.HealthPoints > 0 && b.HealthPoints > 0)
+        //        {
+        //            //a attacks first
 
-                    b.AttackRoll(a);
-                    a.AttackRoll(b);
+        //            b.AttackRoll(a);
+        //            a.AttackRoll(b);
 
-                }
-                if (a.HealthPoints > 0)
-                {
-                    Console.WriteLine(a.Name + " wins!!!");
-                }
-                else
-                {
-                    Console.WriteLine(b.Name + " wins!!!");
-                }
-            }
-            else
-            {
-                Console.WriteLine("same initiative lol try again!");
-            }
+        //        }
+        //        if (a.HealthPoints > 0)
+        //        {
+        //            Console.WriteLine(a.Name + " wins!!!");
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine(b.Name + " wins!!!");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("same initiative lol try again!");
+        //    }
 
-        }
+        //}
     }
 }
